@@ -1,0 +1,18 @@
+{% extends "auth_app/base.html" %}
+{% load static %}
+{% block body_block %}
+    <div>
+        <h1>Please Login</h1>
+
+        <form method="post" action="{% url 'auth_app:user_login' %}"> 
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="" placeholder="Enter username" />
+
+            <label for="password">Password:</label>
+            <input type="text" name="password" value="" placeholder="Enter password" />
+
+            <input type="submit" name="" value="Login">
+        </form>
+    </div>
+{% endblock %}
